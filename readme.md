@@ -9,7 +9,7 @@
     <img src="assets/system/homepage.png" alt="Banner" width="100%" height="100%">
     <br>
     <p>
-      <center>Explore our capstone project didicated to our barangay new pandan.</center>
+      <center>Explore my capstone project didicated to barangay new pandan.</center>
     </p>
   </center>
 </div>
@@ -58,7 +58,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Jeffernyy/bmis.git
+   git clone https://github.com/jeffernyy/bmis.git
    ```
 2. Install NPM packages
    ```sh
@@ -103,7 +103,7 @@ _For more examples, please refer to the [Documentation]()_
   - [x] Barangay Staff
   - [x] Barangay Resident
 
-See the [open issues](https://github.com/Jeffernyy/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/jeffernyy/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -140,4 +140,4 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-- [You can follow me on my social media](https://www.facebook.com/jeffern.malinao.90)
+- [You can follow me on my social media @jeffernyy](https://www.facebook.com/jeffern.malinao.90)
