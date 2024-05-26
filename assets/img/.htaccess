@@ -1,0 +1,17 @@
+# Error document for unauthorized access
+ErrorDocument 401 /public/404.public.php
+
+# Prevent directory listing
+Options -Indexes
+
+# Add more security headers (optional)
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Content-Security-Policy "default-src 'self'"
+
+# Deny access to certain file types (customize as needed)
+<FilesMatch "\.(php|inc|sql|db|ini)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

@@ -1,0 +1,143 @@
+/* dont display the vertical scrollbar */
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* form input type date turns the icon white */
+input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* form input type number set appearance to none */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* pagination previous and next */
+.dark-mode .page-item.disabled .page-link,
+.dark-mode .page-item.disabled a {
+  color: #ffffff;
+}
+
+/* styling when the checkbox is selected but not checked */
+.custom-label {
+  position: relative;
+}
+
+.custom-label::before {
+  position: relative;
+  padding: 7.55px !important;
+  border-color: #ffffff !important;
+}
+
+.custom-label::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0.22px, 0.22px);
+}
+
+.content-header {
+  padding: 25px 0.5rem 15px !important;
+}
+
+.page-link {
+  color: #ffffff !important;
+}
+
+.dark-mode .table thead th {
+  font-weight: normal;
+  background: rgb(108, 117, 125);
+  border-color: rgb(135, 140, 155);
+  border-top: unset;
+  border-bottom: unset;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+  font-weight: normal !important;
+}
+
+.layout-footer-fixed .wrapper .content-wrapper {
+  padding-bottom: 0 !important;
+}
+
+.cstm_crsr {
+  background: #454d55 !important;
+  cursor: not-allowed !important;
+}
+
+.col-sm-12 .col-md-5 {
+  display: flex;
+  align-items: center;
+  margin: 9px 0 0;
+}
+
+.col-sm-12 .col-md-7 {
+  margin: 7px 0 0;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: unset;
+}
+
+/* Custom CSS for Tooltip */
+.tooltip-inner {
+  max-width: 450px !important;
+}
+
+.dt-button-info {
+  color: #454d55 !important;
+  background-color: antiquewhite !important;
+  border: none !important;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select2-container--default.select2-container--disabled
+  .select2-selection--multiple {
+  background-color: #454d55 !important;
+}
+
+label.invalid-feedback,
+label.valid-feedback,
+label.success,
+label.error {
+  margin-bottom: 0 !important;
+}
+
+.form-control.is-valid {
+  border-color: #3eee67 !important;
+}
+
+.form-control.is-invalid {
+  border-color: #ff6272 !important;
+}
+
+/* Success styling for select2 */
+.select2-container .select2-selection.is-valid {
+  border-color: #3eee67 !important;
+}
+
+/* Error styling for select2 */
+.select2-container .select2-selection.is-invalid {
+  border-color: #ff6272 !important;
+}
+
+.custom-file-input.is-valid ~ .custom-file-label,
+.was-validated .custom-file-input:valid ~ .custom-file-label {
+  border-color: #3eee67 !important;
+}
+
+.custom-file-input.is-invalid ~ .custom-file-label,
+.was-validated .custom-file-input:invalid ~ .custom-file-label {
+  border-color: #ff6272 !important;
+}

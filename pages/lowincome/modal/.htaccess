@@ -1,0 +1,28 @@
+# Protect the folder
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /path/to/your/.htpasswd
+Require valid-user
+
+# Allow access to certain IPs (optional)
+# Order deny,allow
+# Deny from all
+# Allow from your_ip
+
+# Error document for unauthorized access
+ErrorDocument 401 /error_pages/401.html
+
+# Prevent directory listing
+Options -Indexes
+
+# Add more security headers (optional)
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Content-Security-Policy "default-src 'self'"
+
+# Deny access to certain file types (customize as needed)
+<FilesMatch "\.(php|inc|sql|db|ini)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
