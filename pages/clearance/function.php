@@ -382,7 +382,7 @@ if (isset($_POST['btn_approve'])) {
 
       // send sms notification with the secret key
       try {
-        // infobip config
+        // api config
         $configuration = new Configuration(host: getenv('INFOBIP_BASE_URL'), apiKey: getenv('INFOBIP_API_KEY'));
         $sendSmsApi = new SmsApi(config: $configuration);
         $destination = new SmsDestination(to: $clearanceData['resident_mobile_num']);
@@ -410,7 +410,7 @@ if (isset($_POST['btn_approve'])) {
         // log error
         error_log('API Error: ' . $apiException->getMessage());
 
-        // user friendly error message here
+        // error message
         $message = "An error occurred while sending the SMS notification. Please try again later.";
         $_SESSION['error'] = $message;
         header("location: " . $_SERVER['REQUEST_URI']);
@@ -501,7 +501,7 @@ if (isset($_POST['btn_disapprove'])) {
 
     // send sms notification with the secret key
     try {
-      // infobip config
+      // api config
       $configuration = new Configuration(host: getenv('INFOBIP_BASE_URL'), apiKey: getenv('INFOBIP_API_KEY'));
       $sendSmsApi = new SmsApi(config: $configuration);
       $destination = new SmsDestination(to: $clearanceData['resident_mobile_num'] ? $clearanceData['resident_mobile_num'] : '09123456789');
@@ -529,7 +529,7 @@ if (isset($_POST['btn_disapprove'])) {
       // log error
       error_log('API Error: ' . $apiException->getMessage());
 
-      // user friendly error message here
+      // error message
       $message = "An error occurred while sending the SMS notification. Please try again later.";
       $_SESSION['error'] = $message;
       header("location: " . $_SERVER['REQUEST_URI']);

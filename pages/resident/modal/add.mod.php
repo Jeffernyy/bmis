@@ -416,17 +416,25 @@
         // check if the entered number starts with '0'
         if (enteredNumber.startsWith('0')) {
           // remove the '0' and add '63' at the beginning
-          var formattedNumber = '63' + enteredNumber.slice(1);
+          var formattedNumber = '+63' + enteredNumber.slice(1);
           // update the input field with the formatted number
           $(this).val(formattedNumber);
           // apply input mask manually
-          $(this).inputmask('999999999999', { placeholder: '' });
+          $(this).inputmask('9999999999999', {
+            placeholder: '',
+            definitions: {
+              '9': {
+                validator: "[0-9+]",
+                cardinality: 1
+              }
+            }
+          });
         }
       } else if (enteredNumber.length < 11) {
         // check if the entered number starts with '63'
-        if (enteredNumber.startsWith('63')) {
+        if (enteredNumber.startsWith('+63')) {
           // remove the '63' and add '0' at the beginning
-          var formattedNumber = '0' + enteredNumber.slice(2);
+          var formattedNumber = '0' + enteredNumber.slice(3);
           // update the input field with the formatted number
           $(this).val(formattedNumber);
         }
