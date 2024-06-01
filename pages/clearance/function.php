@@ -157,7 +157,7 @@ if (isset($_POST['btn_request'])) {
   $row = mysqli_fetch_assoc($result);
   $request_count = $row['request_count'];
 
-  if ($request_count >= 13) {
+  if ($request_count >= 3) {
     // check if the last request was more than 24 hours ago
     $last_request_time = strtotime($row['last_request_time']);
     $next_request_time = $last_request_time + (24 * 60 * 60); // next request available after 24 hours
@@ -293,7 +293,7 @@ if (isset($_POST['btn_request'])) {
   mysqli_stmt_close($check_blotter_stmt);
 
   // reset request count if needed
-  if ($request_count >= 13) {
+  if ($request_count >= 3) {
     // update the request count to 0
     $reset_request_count_query = "UPDATE tblclearance SET request_count = 0 WHERE clearance_res_id = ?";
     $reset_request_count_stmt = mysqli_prepare($con, $reset_request_count_query);

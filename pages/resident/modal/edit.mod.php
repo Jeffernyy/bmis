@@ -437,7 +437,7 @@
                   </div>
                   <div class="form-group">
                     <label class="control-label">Mobile #</label>
-                    <input name="txt_edit_resident_mobile_num" type="number" id="txtEditResMobNum" class="form-control"
+                    <input name="txt_edit_resident_mobile_num" type="text" id="txtEditResMobNum" class="form-control"
                       value="<?php echo htmlspecialchars($row['resident_mobile_num']) ?>">
                   </div>
                   <div class="form-group">
@@ -460,33 +460,6 @@
 </div>
 
 <script>
-  $(document).ready(function () {
-    $('#txtEditResMobNum').on('input', function () {
-      var enteredNumber = $(this).val();
-
-      // check if the entered number has reached the desired length
-      if (enteredNumber.length === 11) {
-        // check if the entered number starts with '0'
-        if (enteredNumber.startsWith('0')) {
-          // remove the '0' and add '63' at the beginning
-          var formattedNumber = '63' + enteredNumber.slice(1);
-          // update the input field with the formatted number
-          $(this).val(formattedNumber);
-          // apply input mask manually
-          $(this).inputmask('999999999999', { placeholder: '' });
-        }
-      } else if (enteredNumber.length < 11) {
-        // check if the entered number starts with '63'
-        if (enteredNumber.startsWith('63')) {
-          // remove the '63' and add '0' at the beginning
-          var formattedNumber = '0' + enteredNumber.slice(2);
-          // update the input field with the formatted number
-          $(this).val(formattedNumber);
-        }
-      }
-    });
-  });
-
   $(document).ready(function () {
     function editHandleSpecifiedInput(editDropdownClass, editSpecifiedClass) {
       // add an event listener to the select element with the specified class
