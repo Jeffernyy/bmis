@@ -1,4 +1,5 @@
-
+### packages
 /vendor/
 
+## environment var
 .env

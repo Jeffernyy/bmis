@@ -141,3 +141,28 @@ label.error {
 .was-validated .custom-file-input:invalid ~ .custom-file-label {
   border-color: #ff6272 !important;
 }
+
+/* custom class for dashboard */
+.bg-custom {
+  background-color: #343a40;
+}
+
+a.custom-link {
+  color: #bebebe !important;
+}
+
+a.custom-link:hover {
+  color: unset !important;
+}
+
+.small-box:hover .icon > i,
+.small-box:hover .icon > i.fa,
+.small-box:hover .icon > i.fab,
+.small-box:hover .icon > i.fad,
+.small-box:hover .icon > i.fal,
+.small-box:hover .icon > i.far,
+.small-box:hover .icon > i.fas,
+.small-box:hover .icon > i.ion {
+  -webkit-transform: none !important;
+  transform: none !important;
+}

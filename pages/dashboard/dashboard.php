@@ -51,28 +51,57 @@ if (!isset($_SESSION)) {
           <section class="content">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-info">
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
                     <div class="inner">
                       <h3>
                         <?php
-                        $sql = mysqli_query($con, "SELECT * FROM tblhousehold");
+                        $sql = mysqli_query($con, "SELECT * FROM tblofficial");
                         $num_rows = mysqli_num_rows($sql);
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase">Total Household</p>
+                      <p class="text-uppercase text-bold">total brgy official</p>
                     </div>
                     <div class="icon">
-                      <i class="fas fa-home"></i>
+                      <i class="fas fa-user-friends text-light"></i>
                     </div>
-                    <a href="../household/household.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
+                    <a href="../officials/officials.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-success">
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
+                    <div class="inner">
+                      <h3>
+                        <?php
+                        $q = mysqli_query($con, "SELECT * FROM tblhousehold");
+                        $num_rows = mysqli_num_rows($q);
+                        echo $num_rows;
+                        ?>
+                      </h3>
+                      <p class="text-uppercase text-bold">total brgy household</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fas fa-home text-light"></i>
+                    </div>
+                    <a href="../household/household.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- fix for small devices only -->
+                <div class="clearfix hidden-md-up"></div>
+
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
                     <div class="inner">
                       <h3>
                         <?php
@@ -81,13 +110,36 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase">Total Residents</p>
+                      <p class="text-uppercase text-bold">total brgy resident</p>
                     </div>
                     <div class="icon">
-                      <i class="fas fa-users"></i>
+                      <i class="fas fa-users text-light"></i>
                     </div>
-                    <a href="../resident/resident.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
+                    <a href="../resident/resident.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
+                    <div class="inner">
+                      <h3>
+                        <?php
+                        $q = mysqli_query($con, "SELECT * FROM tblblotter");
+                        $num_rows = mysqli_num_rows($q);
+                        echo $num_rows;
+                        ?>
+                      </h3>
+                      <p class="text-uppercase text-bold">total brgy blotter</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fas fa-gavel text-light"></i>
+                    </div>
+                    <a href="../blotter/blotter.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
                 </div>
@@ -95,87 +147,47 @@ if (!isset($_SESSION)) {
                 <!-- fix for small devices only -->
                 <div class="clearfix hidden-md-up"></div>
 
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-warning">
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
                     <div class="inner">
                       <h3>
                         <?php
-                        $q = mysqli_query($con, "SELECT * FROM tblclearance WHERE clearance_status = 'approved' ");
+                        $q = mysqli_query($con, "SELECT * FROM tblclearance WHERE clearance_status = 'approved'");
                         $num_rows = mysqli_num_rows($q);
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase">Total Clearance</p>
+                      <p class="text-uppercase text-bold">total brgy clearance</p>
                     </div>
                     <div class="icon">
-                      <i class="fas fa-file-alt"></i>
+                      <i class="fas fa-file-signature text-light"></i>
                     </div>
-                    <a href="../clearance/clearance.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
+                    <a href="../clearance/clearance.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-danger">
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
                     <div class="inner">
                       <h3>
                         <?php
-                        $q = mysqli_query($con, "SELECT * FROM tblbldgpermit WHERE bldgpermit_status = 'approved' ");
+                        $q = mysqli_query($con, "SELECT * FROM tblindigent WHERE indigent_status = 'approved'");
                         $num_rows = mysqli_num_rows($q);
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase">Total Building Permit</p>
+                      <p class="text-uppercase text-bold">total cert of indigent</p>
                     </div>
                     <div class="icon">
-                      <i class="fas fa-file-contract"></i>
+                      <i class="fas fa-file-signature text-light"></i>
                     </div>
-                    <a href="../permit/permit.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- fix for small devices only -->
-                <div class="clearfix hidden-md-up"></div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-danger">
-                    <div class="inner">
-                      <h3>
-                        <?php
-                        $q = mysqli_query($con, "SELECT * FROM tblblotter");
-                        $num_rows = mysqli_num_rows($q);
-                        echo $num_rows;
-                        ?>
-                      </h3>
-                      <p class="text-uppercase">Total Blotter</p>
-                    </div>
-                    <div class="icon">
-                      <i class="fas fa-gavel"></i>
-                    </div>
-                    <a href="../blotter/blotter.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-warning">
-                    <div class="inner">
-                      <h3>
-                        <?php
-                        $q = mysqli_query($con, "SELECT * FROM tblblotter");
-                        $num_rows = mysqli_num_rows($q);
-                        echo $num_rows;
-                        ?>
-                      </h3>
-                      <p class="text-uppercase">Total Low Income</p>
-                    </div>
-                    <div class="icon">
-                      <i class="fas fa-file-alt"></i>
-                    </div>
-                    <a href="../blotter/blotter.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
+                    <a href="../indigent/indigent.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
                 </div>
@@ -183,47 +195,72 @@ if (!isset($_SESSION)) {
                 <!-- fix for small devices only -->
                 <div class="clearfix hidden-md-up"></div>
 
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-success">
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
                     <div class="inner">
                       <h3>
                         <?php
-                        $q = mysqli_query($con, "SELECT * FROM tblblotter");
+                        $q = mysqli_query($con, "SELECT * FROM tbllowincome WHERE lowincome_status = 'approved'");
                         $num_rows = mysqli_num_rows($q);
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase">Total Certificates</p>
+                      <p class="text-uppercase text-bold">total cert of low-income</p>
                     </div>
                     <div class="icon">
-                      <i class="fas fa-file-alt"></i>
+                      <i class="fas fa-file-signature text-light"></i>
                     </div>
-                    <a href="../blotter/blotter.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
+                    <a href="../lowincome/lowincome.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-3">
-                  <div class="small-box bg-info">
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
                     <div class="inner">
                       <h3>
                         <?php
-                        $q = mysqli_query($con, "SELECT * FROM tblblotter");
+                        $q = mysqli_query($con, "SELECT * FROM tblcaptain");
                         $num_rows = mysqli_num_rows($q);
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase">Total Indigent</p>
+                      <p class="text-uppercase text-bold">total brgy captain</p>
                     </div>
                     <div class="icon">
-                      <i class="fas fa-file-alt"></i>
+                      <i class="fas fa-user-secret text-light"></i>
                     </div>
-                    <a href="../blotter/blotter.php" class="small-box-footer">
-                      MORE INFO <i class="fas fa-arrow-circle-right ml-1"></i>
+                    <a href="../captain/captain.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
                 </div>
-                <?php include '../../include/notification.inc.php' ?>
+                <div class="col-4">
+                  <div class="small-box bg-custom"
+                    style="box-shadow: 0 40px 55px rgba(31, 29, 29,0.25), 0 0px 12px rgba(31, 29, 29,0.25); border-top: 3px solid #3f6791;">
+                    <div class="inner">
+                      <h3>
+                        <?php
+                        $q = mysqli_query($con, "SELECT * FROM tblstaff");
+                        $num_rows = mysqli_num_rows($q);
+                        echo $num_rows;
+                        ?>
+                      </h3>
+                      <p class="text-uppercase text-bold">total brgy staff</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fas fa-user-tag text-light"></i>
+                    </div>
+                    <a href="../staff/staff.php" class="small-box-footer text-left custom-link text-bold"
+                      style="padding: 10px 0 10px 10px">
+                      MORE INFO <i class="fas fa-share ml-1"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
