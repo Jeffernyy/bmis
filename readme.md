@@ -62,11 +62,11 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 2. Install NPM packages
    ```sh
-   npm i
+   npm install
    ```
 3. Install Composer packages
    ```sh
-   composer i
+   composer install
    ```
 
 <!-- USAGE EXAMPLES -->
