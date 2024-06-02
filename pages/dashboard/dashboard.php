@@ -158,13 +158,14 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase text-bold">total brgy clearance</p>
+                      <p class="text-uppercase text-bold">total brgy clearance <i title="Approved"
+                          class="fas fa-check-circle text-success ml-1"></i></p>
                     </div>
                     <div class="icon">
                       <i class="fas fa-file-signature text-light"></i>
                     </div>
-                    <a href="../clearance/clearance.php" class="small-box-footer text-left custom-link text-bold"
-                      style="padding: 10px 0 10px 10px">
+                    <a href="../clearance/clearance.php?clearance_status=approved"
+                      class="small-box-footer text-left custom-link text-bold" style="padding: 10px 0 10px 10px">
                       MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
@@ -180,13 +181,14 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase text-bold">total cert of indigent</p>
+                      <p class="text-uppercase text-bold">total cert of indigent <i title="Approved"
+                          class="fas fa-check-circle text-success ml-1"></i></p>
                     </div>
                     <div class="icon">
                       <i class="fas fa-file-signature text-light"></i>
                     </div>
-                    <a href="../indigent/indigent.php" class="small-box-footer text-left custom-link text-bold"
-                      style="padding: 10px 0 10px 10px">
+                    <a href="../indigent/indigent.php?indigent_status=approved"
+                      class="small-box-footer text-left custom-link text-bold" style="padding: 10px 0 10px 10px">
                       MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>
@@ -206,13 +208,14 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase text-bold">total cert of low-income</p>
+                      <p class="text-uppercase text-bold">total cert of low-income <i title="Approved"
+                          class="fas fa-check-circle text-success ml-1"></i></p>
                     </div>
                     <div class="icon">
                       <i class="fas fa-file-signature text-light"></i>
                     </div>
-                    <a href="../lowincome/lowincome.php" class="small-box-footer text-left custom-link text-bold"
-                      style="padding: 10px 0 10px 10px">
+                    <a href="../lowincome/lowincome.php?low_income_status=approved"
+                      class="small-box-footer text-left custom-link text-bold" style="padding: 10px 0 10px 10px">
                       MORE INFO <i class="fas fa-share ml-1"></i>
                     </a>
                   </div>

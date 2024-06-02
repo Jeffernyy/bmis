@@ -864,7 +864,28 @@ if (!isset($_SESSION)) {
 }
 include '../../include/footer.inc.php' ?>
   <script type="text/javascript">
-    // https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const lowIncomeStatus = urlParams.get('low_income_status');
+
+      if (lowIncomeStatus) {
+          const tabLinks = document.querySelectorAll('.nav-tabs .nav-link');
+
+          tabLinks.forEach(link => link.classList.remove('active'));
+          document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('show', 'active'));
+
+          let targetTabId = '#new';
+          if (lowIncomeStatus === 'approved') {
+              targetTabId = '#approved';
+          } else if (lowIncomeStatus === 'disapproved') {
+              targetTabId = '#disapproved';
+          }
+
+          document.querySelector(`[data-target="${targetTabId}"]`).classList.add('active');
+          document.querySelector(targetTabId).classList.add('show', 'active');
+      }
+  });
+
     function loadBadge() {
       let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
