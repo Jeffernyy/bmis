@@ -1,5 +1,5 @@
 <h1>
-  <center>Barangay Management Information System</center>
+  Barangay Management Information System (BMIS)
 </h1>
 
 <br>
@@ -8,17 +8,16 @@
   <center>
     <img src="assets/system/homepage.png" alt="Banner" width="100%" height="100%">
     <br>
-    <p>
-      <center>Explore my capstone project didicated to barangay new pandan.</center>
-    </p>
+    <h3>Explore my capstone project didicated to barangay new pandan.
+    </h3>
   </center>
 </div>
 
 <!-- ABOUT THE PROJECT -->
 
-### Built With
+### Built with
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This section outlines the primary frameworks and libraries that were used to bootstrap the project. Add-ons and plugins will be acknowledged separately. Below are some examples.
 
 - ![HTML5][HTML5-logo]
 - ![CSS3][CSS3-logo]
@@ -40,8 +39,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Below is a guide on setting up your project locally. Follow these steps to create a local copy and get started with the project.
 
 ### Prerequisites
 
@@ -54,7 +52,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_This section provides instructions for installing and setting up the project. Follow these steps to get your environment configured and ready to use._
 
 1. Clone the repo
    ```sh
@@ -73,7 +71,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This section demonstrates how to effectively utilize the project's features. Explore the examples provided to maximize your experience.
 
 _For more examples, please refer to the [Documentation]()_
 
@@ -137,7 +135,5 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 <!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 - [You can follow me on my social media @jeffernyy](https://www.facebook.com/jeffern.malinao.90)
