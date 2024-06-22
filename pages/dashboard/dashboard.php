@@ -158,8 +158,8 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase text-bold">total brgy clearance <i title="Approved"
-                          class="fas fa-check-circle text-success ml-1"></i></p>
+                      <p class="text-uppercase text-bold">total brgy clearance <i data-toggle="tooltip" data-placement="top"
+                          title="This document is shown as approved" class="fas fa-check-circle text-success ml-1"></i></p>
                     </div>
                     <div class="icon">
                       <i class="fas fa-file-signature text-light"></i>
@@ -181,7 +181,8 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase text-bold">total cert of indigent <i title="Approved"
+                      <p class="text-uppercase text-bold">total cert of indigent <i data-toggle="tooltip"
+                          data-placement="top" title="This document is shown as approved"
                           class="fas fa-check-circle text-success ml-1"></i></p>
                     </div>
                     <div class="icon">
@@ -208,7 +209,8 @@ if (!isset($_SESSION)) {
                         echo $num_rows;
                         ?>
                       </h3>
-                      <p class="text-uppercase text-bold">total cert of low-income <i title="Approved"
+                      <p class="text-uppercase text-bold">total cert of low-income <i data-toggle="tooltip"
+                          data-placement="top" title="This document is shown as approved"
                           class="fas fa-check-circle text-success ml-1"></i></p>
                     </div>
                     <div class="icon">

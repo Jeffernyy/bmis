@@ -149,6 +149,7 @@ label.error {
 
 a.custom-link {
   color: #a09c9c !important;
+  transition: all 300ms ease;
 }
 
 a.custom-link:hover {

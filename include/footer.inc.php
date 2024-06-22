@@ -48,6 +48,10 @@
 <script src="../../plugins/chart.js/Chart.min.js"></script>
 <script type="text/javascript">
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
   function checkMain(x) {
     var checked = $(x).prop('checked');
     $('.cbxMain').prop('checked', checked)
