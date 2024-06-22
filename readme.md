@@ -17,7 +17,7 @@
 
 ### Built with
 
-This section outlines the primary frameworks and libraries that were used to bootstrap the project. Add-ons and plugins will be acknowledged separately. Below are some examples.
+These are the primary frameworks and libraries that were used to initialize the project. Add-ons and plugins will be acknowledged separately. Below are some examples.
 
 - ![HTML5][HTML5-logo]
 - ![CSS3][CSS3-logo]
@@ -39,7 +39,7 @@ This section outlines the primary frameworks and libraries that were used to boo
 
 ## Getting Started
 
-Below is a guide on setting up your project locally. Follow these steps to create a local copy and get started with the project.
+Here is a guide to setting up your project locally. Follow these steps to create a local copy and begin working with the project.
 
 ### Prerequisites
 
@@ -52,7 +52,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_This section provides instructions for installing and setting up the project. Follow these steps to get your environment configured and ready to use._
+Here are the instructions for installing and setting up the project. Follow these steps to configure your environment and get ready to use it.\_
 
 1. Clone the repo
    ```sh
@@ -78,6 +78,8 @@ _For more examples, please refer to the [Documentation]()_
 <!-- ROADMAP -->
 
 ## Roadmap
+
+Here are the modules implemented in the project's development roadmap. Stay tuned for updates on forthcoming features and enhancements.
 
 - [x] Barangay Administrator Dashboard
 - [x] Barangay Captain Dashboard
