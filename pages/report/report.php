@@ -112,26 +112,26 @@ if (!isset($_SESSION)) {
                       </div>
                     </div>
                   </div>
-                  <!-- clearance bar chart -->
+                  <!-- blotter bar chart -->
                   <div class="card card-secondary">
                     <div class="card-header">
-                      <h3 class="card-title">Barangay Clearance Tracking Multi Functional Chart</h3>
+                      <h3 class="card-title">Barangay Blotter Tracking Multi Functional Chart</h3>
                       <div class="card-tools">
                         <div class="btn-group">
-                          <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                            <i class="fas fa-ellipsis-v"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-right" role="menu">
-                            <a role="button" class="dropdown-item" data-period="daily">Daily</a>
+                          <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown"></button>
+                          <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" role="menu">
+                            <a role="button" class="dropdown-item" data-blotter="daily">Daily</a>
                             <hr class="dropdown-divider">
-                            </hr>
-                            <a role="button" class="dropdown-item" data-period="weekly">Weekly</a>
+                            <a role="button" class="dropdown-item" data-blotter="weekly">Weekly</a>
                             <hr class="dropdown-divider">
-                            </hr>
-                            <a role="button" class="dropdown-item" data-period="monthly">Monthly</a>
+                            <a role="button" class="dropdown-item" data-blotter="monthly">Monthly</a>
                             <hr class="dropdown-divider">
-                            </hr>
-                            <a role="button" class="dropdown-item" data-period="yearly">Yearly</a>
+                            <a role="button" class="dropdown-item" data-blotter="yearly">Yearly</a>
+                            <hr class="dropdown-divider">
+                            <form id="exportBlotter" action="blotter_report.php" method="post">
+                              <button role="button" class="dropdown-item" type="submit"
+                                name="export_blotter">Export</button>
+                            </form>
                           </div>
                         </div>
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -141,7 +141,106 @@ if (!isset($_SESSION)) {
                     </div>
                     <div class="card-body">
                       <div class="chart">
-                        <canvas id="clearanceReporting" style="position: relative; height:40vh; width:80vw"></canvas>
+                        <canvas id="blotter" style="position: relative; height:40vh; width:80vw"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- clearance bar chart -->
+                  <div class="card card-secondary">
+                    <div class="card-header">
+                      <h3 class="card-title">Barangay Clearance Tracking Multi Functional Chart</h3>
+                      <div class="card-tools">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown"></button>
+                          <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" role="menu">
+                            <a role="button" class="dropdown-item" data-clearance="daily">Daily</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-clearance="weekly">Weekly</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-clearance="monthly">Monthly</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-clearance="yearly">Yearly</a>
+                            <hr class="dropdown-divider">
+                            <form id="exportClearance" action="clearance_report.php" method="post">
+                              <button role="button" class="dropdown-item" type="submit"
+                                name="export_clearance">Export</button>
+                            </form>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="chart">
+                        <canvas id="clearance" style="position: relative; height:40vh; width:80vw"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- indigent bar chart -->
+                  <div class="card card-secondary">
+                    <div class="card-header">
+                      <h3 class="card-title">Barangay Indigent Certification Tracking Multi Functional Chart</h3>
+                      <div class="card-tools">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown"></button>
+                          <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" role="menu">
+                            <a role="button" class="dropdown-item" data-indigent="daily">Daily</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-indigent="weekly">Weekly</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-indigent="monthly">Monthly</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-indigent="yearly">Yearly</a>
+                            <hr class="dropdown-divider">
+                            <form id="exportIndigent" action="indigent_report.php" method="post">
+                              <button role="button" class="dropdown-item" type="submit"
+                                name="export_indigent">Export</button>
+                            </form>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="chart">
+                        <canvas id="indigent" style="position: relative; height:40vh; width:80vw"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- lowincome bar chart -->
+                  <div class="card card-secondary">
+                    <div class="card-header">
+                      <h3 class="card-title">Barangay Lowincome Certification Tracking Multi Functional Chart</h3>
+                      <div class="card-tools">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown"></button>
+                          <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" role="menu">
+                            <a role="button" class="dropdown-item" data-lowincome="daily">Daily</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-lowincome="weekly">Weekly</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-lowincome="monthly">Monthly</a>
+                            <hr class="dropdown-divider">
+                            <a role="button" class="dropdown-item" data-lowincome="yearly">Yearly</a>
+                            <hr class="dropdown-divider">
+                            <form id="exportLowincome" action="lowincome_report.php" method="post">
+                              <button role="button" class="dropdown-item" type="submit"
+                                name="export_lowincome">Export</button>
+                            </form>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="chart">
+                        <canvas id="lowincome" style="position: relative; height:40vh; width:80vw"></canvas>
                       </div>
                     </div>
                   </div>
@@ -157,201 +256,64 @@ include '../../include/footer.inc.php';
 include 'purok.php';
 include 'educ.php';
 include 'age.php';
+include 'blotter.php';
+include 'clearance.php';
+include 'indigent.php';
+include 'lowincome.php';
 ?>
   <script>
-    $(document).ready(function () {
-      // initialize the chart
-      var areaChartCanvas = document.getElementById('clearanceReporting').getContext('2d');
-      window.clearanceChart = createChart(areaChartCanvas);
+    function openExportWindow(formId) {
+      const formElement = document.getElementById(formId);
+      formElement.addEventListener('submit', function (event) {
+        event.preventDefault(); // prevent the form from submitting the default way
+        window.open('', 'exportWindow'); // open a new window
 
-      // default to showing daily report
-      fetchData('daily');
+        // create a hidden form and submit it to the new window
+        const form = document.createElement('form');
+        form.action = this.action;
+        form.method = this.method;
+        form.target = 'exportWindow';
 
-      // handle dropdown selection
-      $('.dropdown-item').click(function () {
-        var period = $(this).data('period');
-        fetchData(period);
+        // create and append the second input element
+        const input1 = document.createElement('input');
+        input1.type = 'hidden';
+        input1.name = 'export_blotter';
+        input1.value = 'true'; // you can set this to any value you need
+        form.appendChild(input1);
+
+        // create and append the first input element
+        const input2 = document.createElement('input');
+        input2.type = 'hidden';
+        input2.name = 'export_clearance';
+        input2.value = 'true'; // you can set this to any value you need
+        form.appendChild(input2);
+
+        // create and append the second input element
+        const input3 = document.createElement('input');
+        input3.type = 'hidden';
+        input3.name = 'export_indigent';
+        input3.value = 'true'; // you can set this to any value you need
+        form.appendChild(input3);
+
+        // create and append the second input element
+        const input4 = document.createElement('input');
+        input4.type = 'hidden';
+        input4.name = 'export_lowincome';
+        input4.value = 'true'; // you can set this to any value you need
+        form.appendChild(input4);
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form); // clean up the hidden form
       });
+    }
 
-      // ajax call to fetch data from db
-      function fetchData(period) {
-        var url;
-        switch (period) {
-
-          case 'daily':
-            url = '../../ajax/daily.clrnc.ajax.php';
-            break;
-
-          case 'weekly':
-            url = '../../ajax/weekly.clrnc.ajax.php';
-            break;
-
-          case 'monthly':
-            url = '../../ajax/monthly.clrnc.ajax.php';
-            break;
-
-          case 'yearly':
-            url = '../../ajax/yearly.clrnc.ajax.php';
-            break;
-        }
-
-        $.ajax({
-          url: url,
-          type: 'GET',
-          dataType: 'json',
-          success: function (data) {
-            updateChart(data);
-          },
-          error: function (xhr, status, error) {
-            console.error('Error fetching data:', error);
-          }
-        });
-      }
-
-      function updateChart(data) {
-        // debugging
-        console.log('Received...', data);
-
-        // convert data arrays to numeric values for daily report
-        var daily_requested = data.daily_clearance_requested ? data.daily_clearance_requested.map(Number) : [];
-        var daily_approved = data.daily_clearance_approved ? data.daily_clearance_approved.map(Number) : [];
-        var daily_disapproved = data.daily_clearance_disapproved ? data.daily_clearance_disapproved.map(Number) : [];
-
-        // update chart data for daily report
-        clearanceChart.data.labels = data.daily_clearance_labels || [];
-        clearanceChart.data.datasets[0].data = daily_requested;
-        clearanceChart.data.datasets[1].data = daily_approved;
-        clearanceChart.data.datasets[2].data = daily_disapproved;
-
-        // update chart data for weekly report
-        if (data.weekly_clearance_labels && data.weekly_clearance_requested && data.weekly_clearance_approved && data.weekly_clearance_disapproved) {
-          var weekly_requested = data.weekly_clearance_requested.map(Number);
-          var weekly_approved = data.weekly_clearance_approved.map(Number);
-          var weekly_disapproved = data.weekly_clearance_disapproved.map(Number);
-
-          clearanceChart.data.labels = data.weekly_clearance_labels;
-          clearanceChart.data.datasets[0].data = weekly_requested;
-          clearanceChart.data.datasets[1].data = weekly_approved;
-          clearanceChart.data.datasets[2].data = weekly_disapproved;
-        }
-
-        // update chart data for monthly report
-        if (data.monthly_clearance_labels && data.monthly_clearance_requested && data.monthly_clearance_approved && data.monthly_clearance_disapproved) {
-          var monthly_requested = data.monthly_clearance_requested.map(Number);
-          var monthly_approved = data.monthly_clearance_approved.map(Number);
-          var monthly_disapproved = data.monthly_clearance_disapproved.map(Number);
-
-          clearanceChart.data.labels = data.monthly_clearance_labels;
-          clearanceChart.data.datasets[0].data = monthly_requested;
-          clearanceChart.data.datasets[1].data = monthly_approved;
-          clearanceChart.data.datasets[2].data = monthly_disapproved;
-        }
-
-        // update chart data for yearly report
-        if (data.yearly_clearance_labels && data.yearly_clearance_requested && data.yearly_clearance_approved && data.yearly_clearance_disapproved) {
-          var yearly_requested = data.yearly_clearance_requested.map(Number);
-          var yearly_approved = data.yearly_clearance_approved.map(Number);
-          var yearly_disapproved = data.yearly_clearance_disapproved.map(Number);
-
-          clearanceChart.data.labels = data.yearly_clearance_labels;
-          clearanceChart.data.datasets[0].data = yearly_requested;
-          clearanceChart.data.datasets[1].data = yearly_approved;
-          clearanceChart.data.datasets[2].data = yearly_disapproved;
-        }
-
-        clearanceChart.update();
-      }
-
-      function createChart(canvas) {
-        // debugging
-        console.log('Created...');
-        var newGradient = canvas.createLinearGradient(0, 0, 0, 250);
-        newGradient.addColorStop(0, 'rgba(255,205,86,1)');
-        newGradient.addColorStop(1, 'rgba(255,205,86,0)');
-
-        var disapprovedGradient = canvas.createLinearGradient(0, 0, 0, 250);
-        disapprovedGradient.addColorStop(0, 'rgba(255,99,132,1)');
-        disapprovedGradient.addColorStop(1, 'rgba(255,99,132,0)');
-
-        return new Chart(canvas, {
-          type: 'bar',
-          data: {
-            labels: [],
-            datasets: [{
-              label: 'New',
-              data: [],
-              backgroundColor: newGradient,
-              order: 1
-            },
-            {
-              label: 'Approved',
-              data: [],
-              backgroundColor: 'transparent',
-              borderColor: 'rgba(54,162,235,1)',
-              borderWidth: 5,
-              pointRadius: 5,
-              pointBackgroundColor: 'rgb(255,255,255)',
-              pointBorderColor: 'rgb(255,255,255)',
-              pointBorderWidth: 0,
-              pointHoverRadius: 7,
-              pointHoverBackgroundColor: 'rgb(220,220,220)',
-              pointHoverBorderColor: 'rgb(220,220,220)',
-              type: 'line',
-              order: 0
-            },
-            {
-              label: 'Disapproved',
-              data: [],
-              backgroundColor: disapprovedGradient,
-              order: 1
-            },
-            ]
-          },
-          options: {
-            maintainAspectRatio: false,
-            responsive: true,
-            animation: {
-              duration: 1500
-            },
-            legend: {
-              display: false
-            },
-            tooltips: {
-              enabled: true,
-              bodyFontSize: 14,
-              backgroundColor: 'rgba(50, 50, 50, 0.7)',
-              bodyFontColor: 'white',
-              titleFontColor: 'white',
-            },
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: true,
-                  color: '#4f4f4f'
-                },
-                ticks: {
-                  fontColor: '#d6d6d6'
-                }
-              }],
-              yAxes: [{
-                gridLines: {
-                  display: true,
-                  color: '#4f4f4f'
-                },
-                ticks: {
-                  fontColor: '#d6d6d6',
-                  beginAtZero: true, // start y-axis from zero
-                  stepSize: false, // specify the step size for y-axis labels
-                  padding: 20
-                }
-              }]
-            }
-          }
-        });
-      }
-    });
+    // Add event listeners to the forms
+    openExportWindow('exportBlotter');
+    openExportWindow('exportClearance');
+    openExportWindow('exportIndigent');
+    openExportWindow('exportLowincome');
   </script>
-
 </body>
 
 </html>

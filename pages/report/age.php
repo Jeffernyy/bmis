@@ -19,7 +19,7 @@
     } ?>
 
     var barChartCanvas = $('#age').get(0).getContext('2d');
-    var ageGradient = barChartCanvas.createLinearGradient(0, 0, 0, 250);
+    var ageGradient = barChartCanvas.createLinearGradient(0, 0, 0, 360); // it depends on the viewport height
     ageGradient.addColorStop(0, 'rgba(131, 255, 81, 1)');
     ageGradient.addColorStop(1, 'rgba(131, 255, 81, 0)');
 
@@ -107,7 +107,7 @@
             ticks: {
               fontColor: '#d6d6d6',
               beginAtZero: true,
-              stepSize: 2,
+              stepSize: false,
               padding: 15
             }
           }]

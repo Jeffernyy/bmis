@@ -10,7 +10,7 @@
 		} ?>
 
 		var areaChartCanvas = $('#purok').get(0).getContext('2d');
-		var areaGradient = areaChartCanvas.createLinearGradient(0, 0, 0, 250);
+		var areaGradient = areaChartCanvas.createLinearGradient(0, 0, 0, 360); // it depends on the viewport height
 		areaGradient.addColorStop(0, 'rgba(0,247,247,1)');
 		areaGradient.addColorStop(1, 'rgba(0,247,247,0)');
 
@@ -68,7 +68,7 @@
 					ticks: {
 						fontColor: '#d6d6d6',
 						beginAtZero: true, // start y-axis from zero
-						stepSize: 2, // specify the step size for y-axis labels
+						stepSize: false, // specify the step size for y-axis labels
 						padding: 20
 					}
 				}]

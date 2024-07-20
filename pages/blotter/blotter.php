@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-if (!isset ($_SESSION)) {
+if (!isset($_SESSION)) {
   include '../../include/session.inc.php';
-  if (!isset ($_SESSION['role'])) {
+  if (!isset($_SESSION['role'])) {
     header("Location: ../../login.php");
     exit();
   } elseif (($_SESSION['role'] !== "administrator") && ($_SESSION['role'] !== "staff") || ($_SESSION['role'] === "captain") || ($_SESSION['role'] === "resident")) {
@@ -55,14 +55,14 @@ if (!isset ($_SESSION)) {
                   <div class="card card-primary card-outline">
                     <div class="card-header">
                       <?php
-                      if ((!isset ($_SESSION['role'])) || ($_SESSION['role'] == "administrator") || (!isset ($_SESSION['role'])) || ($_SESSION['role'] == "staff")) {
+                      if ((!isset($_SESSION['role'])) || ($_SESSION['role'] == "administrator") || (!isset($_SESSION['role'])) || ($_SESSION['role'] == "staff")) {
                         ?>
                         <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#addModal">
                           <i class="fa fa-user-plus" aria-hidden="true"></i>
                           &nbsp; Add Blotter
                         </button>
                         <?php
-                        if ((isset ($_SESSION['role']) && $_SESSION['role'] == "administrator") || (isset ($_SESSION['role']) && $_SESSION['role'] == "staff")) {
+                        if ((isset($_SESSION['role']) && $_SESSION['role'] == "administrator") || (isset($_SESSION['role']) && $_SESSION['role'] == "staff")) {
                           ?>
                           <button type="button" class="btn btn-danger ml-1" data-toggle="modal" data-target="#deleteModal">
                             <i class="fas fa-trash-alt" aria-hidden="true"></i>
@@ -80,7 +80,7 @@ if (!isset ($_SESSION)) {
                           <thead>
                             <tr>
                               <?php
-                              if ((isset ($_SESSION['role']) && $_SESSION['role'] == "administrator") || (isset ($_SESSION['role']) && $_SESSION['role'] == "staff")) {
+                              if ((isset($_SESSION['role']) && $_SESSION['role'] == "administrator") || (isset($_SESSION['role']) && $_SESSION['role'] == "staff")) {
                                 ?>
                                 <th class="align-middle user-select-none" style="width: 0px !important">
                                   <div class="custom-control custom-checkbox" style="padding: 0 0 0 30.75px">
@@ -91,6 +91,7 @@ if (!isset ($_SESSION)) {
                                 </th>
                                 <?php
                               } ?>
+                              <th class="align-middle">Blotter Case #</th>
                               <th class="align-middle">Complainant</th>
                               <th class="align-middle">Respondent</th>
                               <th class="align-middle">Complaint</th>
@@ -102,8 +103,8 @@ if (!isset ($_SESSION)) {
                           </thead>
                           <tbody>
                             <?php
-                            if ((isset ($_SESSION['role']) && $_SESSION['role'] === "administrator") || (isset ($_SESSION['role']) && $_SESSION['role'] === "staff")) {
-                              $squery = mysqli_query($con, "SELECT b.*, CASE WHEN b.blotter_complainant REGEXP '^[0-9]+$' THEN (SELECT CONCAT(resident_fname, IF(resident_mname = 'n/a', '', CONCAT(' ', resident_mname)), ' ', resident_lname) FROM tblresident WHERE id = b.blotter_complainant) ELSE b.blotter_complainant END AS rname_complainant, CASE WHEN b.blotter_respondent REGEXP '^[0-9]+$' THEN (SELECT CONCAT(resident_fname, IF(resident_mname = 'n/a', '', CONCAT(' ', resident_mname)), ' ', resident_lname) FROM tblresident WHERE id = b.blotter_respondent) ELSE b.blotter_respondent END AS rname_respondent FROM tblblotter b LEFT JOIN tblresident r_complainant ON b.blotter_complainant = r_complainant.id LEFT JOIN tblresident r_respondent ON b.blotter_respondent = r_respondent.id ORDER BY id DESC") or die ('Error: ' . mysqli_error($con));
+                            if ((isset($_SESSION['role']) && $_SESSION['role'] === "administrator") || (isset($_SESSION['role']) && $_SESSION['role'] === "staff")) {
+                              $squery = mysqli_query($con, "SELECT b.*, CASE WHEN b.blotter_complainant REGEXP '^[0-9]+$' THEN (SELECT CONCAT(resident_fname, IF(resident_mname = 'n/a', '', CONCAT(' ', resident_mname)), ' ', resident_lname) FROM tblresident WHERE id = b.blotter_complainant) ELSE b.blotter_complainant END AS rname_complainant, CASE WHEN b.blotter_respondent REGEXP '^[0-9]+$' THEN (SELECT CONCAT(resident_fname, IF(resident_mname = 'n/a', '', CONCAT(' ', resident_mname)), ' ', resident_lname) FROM tblresident WHERE id = b.blotter_respondent) ELSE b.blotter_respondent END AS rname_respondent FROM tblblotter b LEFT JOIN tblresident r_complainant ON b.blotter_complainant = r_complainant.id LEFT JOIN tblresident r_respondent ON b.blotter_respondent = r_respondent.id ORDER BY id DESC") or die('Error: ' . mysqli_error($con));
                               while ($row = mysqli_fetch_array($squery)) {
                                 $checkboxId = 'cstm-chckbx' . $row['id'];
                                 ?>
@@ -114,6 +115,9 @@ if (!isset ($_SESSION)) {
                                         id="<?php echo $checkboxId; ?>" value="<?php echo $row['id']; ?>">
                                       <label for="<?php echo $checkboxId; ?>" class="custom-control-label"></label>
                                     </div>
+                                  </td>
+                                  <td class="align-middle">
+                                    <?php echo $row['blotter_case_num']; ?>
                                   </td>
                                   <td class="align-middle">
                                     <?php echo $row['rname_complainant']; ?>
